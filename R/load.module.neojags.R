@@ -1,29 +1,5 @@
-# This file is copied and modified from runjags package
-# Copyright (C) 2013 Matthew Denwood <matthewdenwood@mac.com> and Achmad Syahrul Choir <madsyair@gmail.com>
-# 
-# This code allows the distributions provided by the neojags module
-# to be tested from within R.  
-# 
-# This version of the module is compatible with JAGS version 3 and 4.
-# Some necessary modifications are controlled using the INCLUDERSCALARDIST
-# macro which is defined by makevars if JAGS version 3 is detected.
-# Once JAGS version 3 becomes obsolete the redundant code will be
-# removed from neojags.
-# 
-# neojags is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-# 
-# neojags is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with runjags  If not, see <http://www.gnu.org/licenses/>.
-#' Load the internal JAGS module provided by neojags that is
-#'modified from runjags package
+#' Load the internal JAGS module provided by neojags
+#'
 #' @name load.neojagsmodule
 #' @aliases load.neojagsmodule load.neojagsmodule unload.neoJAGSmodule unload.neoJAGSmodule
 #'
@@ -185,7 +161,7 @@
 #' @return Invisibly returns TRUE if able to (un)load the module, or FALSE otherwise
 #' @keywords methods
 #' @seealso
-#' \code{\link{runjags-class}}, \code{\link[rjags]{load.module}}
+#'  \code{\link[rjags]{load.module}}
 #'
 #' @references
 #' Choir, A. S. 2020. The New Neo-Normal Distributions and Their Properties, Doctoral dissertation, Institut Teknologi Sepuluh November.
@@ -328,17 +304,17 @@ dynloadmodule <- function(){
 
 	if(inherits(success, 'try-error')){
 
-		rvers <- paste('version ', R.version$major, sep='')
-		if(grepl('mac.binary', .Platform$pkgType, fixed=TRUE)){
+		rvers <- paste('version ', R.version$major, sep = '')
+		if(grepl('mac.binary', .Platform$pkgType, fixed = TRUE)){
 			# A specific error may be because of SL vs Mavericks version on OS X for JAGS version 3.4:
 			mavericks <- grepl('mavericks', .Platform$pkgType)
-			if(mavericks)
+			if( mavericks)
 				rvers <- paste(rvers, ' - Mavericks', sep='')
 			else
-				rvers <- paste(rvers, ' - Snow Leopard', sep='')
+				rvers <- paste(rvers, ' - Snow Leopard', sep = '')
 		}
 
-		return(paste("The neojags dynlib could not be loaded - perhaps the package was not built using the same versions of R [", rvers, "] and JAGS [version ", testjags(silent=TRUE)$JAGS.version, "] as available on this system?", sep=''))
+		return(paste("The neojags dynlib could not be loaded - perhaps the package was not built using the same versions of R [", rvers, "] and JAGS [version ", testjags(silent = TRUE)$JAGS.version, "] as available on this system?", sep = ''))
 
 	}
 
@@ -349,13 +325,13 @@ dynloadmodule <- function(){
 
 dynunloadmodule <- function(){
 
-	if(is.null(neojagsprivate$dynlibname)){
+if(is.null(neojagsprivate$dynlibname)){
 		warning('Unable to load the dynlib as it has not been loaded')
 		invisible(FALSE)
 	}
 	# Find and unload the neojags shared library (only required for these tests and using the rjags call 'load.modue()' so NOT loaded at runtime):
-	slibpath <- system.file("libs", paste(.Platform$r_arch, if(.Platform$r_arch!="") "/" else "", if(.Platform$OS.type=="unix") "neojags.so" else "neojags.dll", sep=""), package="neojags")
-	swcat("Unloading shared library from:  ", slibpath, "\n", sep="")
+	slibpath <- system.file("libs", paste(.Platform$r_arch, if(.Platform$r_arch != "") "/" else "", if(.Platform$OS.type=="unix") "neojags.so" else "neojags.dll", sep=""), package="neojags")
+	swcat("Unloading shared library from:  ", slibpath, "\n", sep = "")
 	success <- try(dyn.unload(slibpath))
 	if(inherits(success, 'try-error'))
 		warning("The internal dynlib could not be unloaded")
