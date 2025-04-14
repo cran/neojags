@@ -1,5 +1,5 @@
 5472275d51d4bfc0371812f98d0158c0 *CHANGELOG
-9adef9bbe0cb11ff79a22963d663a61f *DESCRIPTION
+5adec71f92f07da548b55fb1be7235a5 *DESCRIPTION
 1a5e9b57e24ef9182d8bd28309245b32 *INSTALL
 c966e78593d99c8249a4967c42c20503 *NAMESPACE
 b57eaa3156974aa3ec640df337009eb1 *R/example.R
@@ -8,14 +8,14 @@ f5d3f66b9b608ed33e089e3ba63fa812 *R/load.module.neojags.R
 5a7c196be9acf54ddc16e48045cf3931 *R/utilities.invisible.R
 3a4d366736ffbc001997fb9c0d9f8aa0 *R/zzz.R
 8ef87466100acd05504b092167bbada1 *README.md
-f9eaef30a38e90d9ed4b8879dd17b832 *build/vignette.rds
+ab3ae8cbadb227c07b330a972529d361 *build/vignette.rds
 1a400736bc1979941b55b168c38d4fac *cleanup
 9034b9e2c02534c21211a6b8f08bfcbb *configure
-6787c2c82881289771d23d730c2b11b7 *configure.ac
-1a7376caf723a16b60ef7e99b6ef5654 *inst/WORDLIST
+6ebfe6a42f98733c8dffc2eadc96959f *configure.ac
+0f9ca583676f3ce18b0131e1e5cb1534 *inst/WORDLIST
 49d8645e1d0b5b63bd886f92a03fee10 *inst/doc/vignettes.R
 7b0aec406d95074ed42ec20a698a0ca9 *inst/doc/vignettes.Rmd
-b64ad7c0788310394b4d595aa8863fbb *inst/doc/vignettes.html
+03c7d594105dc4172f0449c052e30584 *inst/doc/vignettes.html
 ad9a55857ff86a5d4282e1f0cef34216 *man/load.neojagsmodule.Rd
 3be1c9f669a86552dad01cb7b9824e30 *src/Makevars.in
 41fe36d9a6bb1e1868fc99b9081a5868 *src/Makevars.ucrt
@@ -51,7 +51,8 @@ ae9433474bfb11475d5bdd877c503033 *src/jagsversions.h
 d8bb8c3614556450be0dee08e3ebdd3d *src/neojags.cc
 5bcb478c0740abfeabf114a7ac3f1f20 *src/testneojags.cc
 1be1cd32af4c24fee56f6f02c58c7a58 *tests/checkmodule.R
-0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
+e59c6bc86d585819d6446b86854df4b5 *tests/moduletargets.Rsave
+f3dbceedeeaeefc54bdcc37825bc0aca *tests/spelling.R
 95f143ed7dcd7bd269e8f2f5eb532a5e *tests/testthat.R
-da851e82e1156778c52e6de68d232db1 *tests/testthat/test-basic_example.R
+6ef83e65c92dad078f9c5de33f93e7dd *tests/testthat/test-basic_example.R
 7b0aec406d95074ed42ec20a698a0ca9 *vignettes/vignettes.Rmd
