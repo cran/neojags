@@ -2,7 +2,7 @@ Package: neojags
 Type: Package
 Title: Neo-Normal Distributions Family for Markov Chain Monte Carlo
         (MCMC) Models in 'JAGS'
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: c(person("Achmad Syahrul", "Choir", role=c("aut","cre"), email="madsyair@stis.ac.id"),
              person("Resi", "Ramadani", role="aut", email="resi.ramadhi@gmail.com"), 
              person("Nur", "Iriawan", role="aut", email="nur_i@statistika.its.ac.id"),
@@ -37,7 +37,7 @@ Config/testthat/edition: 3
 VignetteBuilder: knitr
 Language: en-US
 NeedsCompilation: yes
-Packaged: 2025-04-14 04:18:48 UTC; madsyair
+Packaged: 2026-02-22 14:44:50 UTC; madsyair
 Maintainer: Achmad Syahrul Choir <madsyair@stis.ac.id>
 Author: Achmad Syahrul Choir [aut, cre],
   Resi Ramadani [aut],
@@ -48,4 +48,4 @@ Author: Achmad Syahrul Choir [aut, cre],
     src/distributions/D*.*, configure.ac, R/runjags_functions.R, and
     original copyright holder of some modified code where indicated)
 Repository: CRAN
-Date/Publication: 2025-04-14 12:50:02 UTC
+Date/Publication: 2026-02-22 17:30:02 UTC
