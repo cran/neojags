@@ -1,0 +1,25 @@
+#  This file was adapted from R package JAGSmodule file src/Makevars
+#  Copyright (C) 2026 Matt Denwood
+#
+#  This file can be used (unmodified) by any R package wishing to implement
+#  an inbuilt JAGS module.
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License version
+#  2 as published by the Free Software Foundation.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  A copy of the GNU General Public License is available at
+#  http://www.r-project.org/Licenses/
+
+## neojags also calls the JAGS maths library (JRmath.h: jags_lbeta, jags_pgamma, ...),
+## which lives in libjrmath rather than libjags, so it must be linked explicitly:
+PKG_LIBS = `"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e "rjags::pkg.compile.flags('LIBS')"` -ljrmath
+PKG_CXXFLAGS = `"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e "rjags::pkg.compile.flags('CXXFLAGS')"`
+PKG_CPPFLAGS = `"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e "rjags::pkg.compile.flags('CPPFLAGS')"`
+
+OBJECTS = distributions/DGmsnburr.o distributions/DMsnburr.o distributions/DMsnburr2a.o  distributions/DSkewnf.o distributions/DSkewtf.o distributions/DLep.o distributions/DFossep.o distributions/DJsep.o init.o neojags.o testneojags.o

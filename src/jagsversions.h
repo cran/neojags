@@ -2,7 +2,7 @@
  Copyright (C) 2015 Matthew Denwood <matthewdenwood@mac.com>
  
  This header file sorts the necessary macros for compiling against 
- JAGS versions 3 vs 5 - the main difference is that JAGS 3 requires the 'RScalarDist' header to be included in each distribution header, whereas JAGS 4 and later have a single 'RScalarDist' header that is included in the 'jags' namespace and can be used by all distributions. The macro 'INCLUDERSCALARDIST' is set if compiling against JAGS 3, and this is used to determine which header to include and which namespace to use for the RScalarDist class.
+ JAGS versions 3 vs 4
  
  This file is part of runjags
  
